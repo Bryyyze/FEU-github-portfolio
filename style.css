@@ -123,3 +123,56 @@ footer {
   color: #888;
   font-size: 0.9rem;
 }
+
+/* ---------- PROJECT GALLERY STYLING ---------- */
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.game-card {
+  background: #33364a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 1rem;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
+}
+
+.game-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid #f4c430;
+}
+
+.game-card h3 {
+  color: #f4c430;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.game-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  padding: 0 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-card img {
+    height: 180px;
+  }
+}
