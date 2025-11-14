@@ -75,5 +75,43 @@
   <footer>
     <p>© 2025 Bryan Robin M. Santiago</p>
   </footer>
+  
+  <!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <div id="caption"></div>
+</div>
+<script>
+  // Get modal elements
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // Get all game card images
+  const gameCards = document.querySelectorAll(".game-card img");
+
+  gameCards.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "block";
+      lightboxImg.src = img.src;
+      captionText.innerHTML = img.alt; // shows the alt text as caption
+    });
+  });
+
+  // Close modal when clicking the "×"
+  closeBtn.onclick = function() {
+    lightbox.style.display = "none";
+  }
+
+  // Close modal if clicking outside the image
+  lightbox.onclick = function(e) {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  }
+</script>
+
 </body>
 </html>
